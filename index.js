@@ -31,6 +31,7 @@ function selected(choice) {
   const status = document.querySelector(".resultsStatus" + decideWinner);
   const userChoiceDisplay = document.querySelector(".userChoice" + choice);
   const pcChoiceDisplay = document.querySelector(".computerChoice" + pcAnswer);
+
   resultSection.style.display = "block";
   selector.style.display = "none";
   playAgainButton.style.display = "block";
@@ -101,6 +102,7 @@ function playAgain() {
     ".ifWin",
     ".user-effect",
     ".computer-effect",
+    ".nextButton",
   ];
   let findComponent = document.querySelectorAll(displayNoneValue);
   findComponent.forEach((i) => (i.style.display = "none"));
