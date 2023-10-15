@@ -165,7 +165,8 @@ body {
 .results-playAgainButton,
 .resultText,
 .yourChoice,
-.pcChoice {
+.pcChoice,
+.resultsStatus {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -174,8 +175,14 @@ body {
 
 .resultsStatusWin,
 .resultsStatusLost,
-.resultsStatusTie {
-  padding: 2rem;
+.resultsStatusTie,
+.resultsStatus {
+  padding: 0rem;
+}
+
+.resultsStatus {
+  padding-bottom: 2rem;
+  font-weight: 100;
 }
 
 .style {

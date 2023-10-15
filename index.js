@@ -1,9 +1,9 @@
-reset();
 const selector = document.querySelector(".gameSection");
 const Heading = document.querySelectorAll(".resultHeading");
 const resultSection = document.querySelector(".resultSection");
 const userEffect = document.querySelectorAll(".user-effect");
 const computerEffect = document.querySelectorAll(".computer-effect");
+reset();
 const playAgainButton = document.querySelector(".playAgain");
 const rulesButton = document.querySelector(".rules");
 const closeButton = document.querySelector(".closeButton");
@@ -31,7 +31,6 @@ function selected(choice) {
   const status = document.querySelector(".resultsStatus" + decideWinner);
   const userChoiceDisplay = document.querySelector(".userChoice" + choice);
   const pcChoiceDisplay = document.querySelector(".computerChoice" + pcAnswer);
-
   resultSection.style.display = "block";
   selector.style.display = "none";
   playAgainButton.style.display = "block";
