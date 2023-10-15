@@ -1,0 +1,301 @@
+:root {
+  --background: #8cc461;
+  --light: #ffffff;
+  --scoreTitleText: #656565;
+  --scoreNumber: #252525;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  text-transform: uppercase;
+  background: var(--background);
+  color: var(--light);
+  letter-spacing: 0.2rem;
+}
+
+/*Container*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  align-items: center;
+}
+
+/*header*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rem;
+  border: 1px solid var(--light);
+  border-radius: 10px;
+}
+
+.logo {
+  padding: 15px 0px 15px 20px;
+}
+
+.logoContain {
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+.score {
+  display: flex;
+  padding: 10px;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.computerScore,
+.yourScore {
+  background: var(--light);
+  color: var(--scoreTitleText);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 1rem;
+  border-radius: 10px;
+  height: 90%;
+  width: 150px;
+}
+
+.scoreTitle {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.scoreNumber {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: var(--scoreNumber);
+}
+
+/*game*/
+.game {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "rock scissors"
+    "paper paper";
+  place-items: center;
+  height: 30rem;
+  padding-top: 3rem;
+  column-gap: 8rem;
+  position: relative;
+}
+
+.game::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 28%;
+  top: 32%;
+  background: url("./SVG/tringle.svg") no-repeat;
+  z-index: -1;
+}
+
+.choice-button {
+  background: white;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+}
+
+.paper {
+  grid-area: paper;
+  border: 18px solid #ffa943;
+}
+.rock {
+  grid-area: rock;
+  border: 18px solid #0074b6;
+}
+.scissors {
+  border: 18px solid #bd00ff;
+  grid-area: scissors;
+}
+
+/*result*/
+
+.Result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem 0rem 5rem 0rem;
+}
+
+.resultHeading {
+  font-weight: 500;
+  padding-bottom: 2rem;
+}
+
+.playAgainButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.playAgain,
+.playAgainHurryPage {
+  padding: 8px 35px;
+  background: white;
+  text-transform: capitalize;
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: inherit;
+  color: #6b6b6b;
+}
+
+.results-playAgainButton,
+.resultText,
+.yourChoice,
+.pcChoice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.resultsStatusWin,
+.resultsStatusLost,
+.resultsStatusTie {
+  padding: 2rem;
+}
+
+.style {
+  border-radius: 50%;
+  background: white;
+  height: 8rem;
+  width: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*footer*/
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 0rem 5rem 2rem 0rem;
+}
+
+/*rules and next button*/
+
+.buttonVisibleBottom {
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  padding-left: 10px;
+}
+
+.ruleButton,
+.nextbtn {
+  padding: 10px;
+}
+
+.rules,
+.nextButton {
+  padding: 10px 35px;
+  background: transparent;
+  text-transform: capitalize;
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: inherit;
+}
+/*rules*/
+.rule {
+  position: relative;
+}
+
+.rulesContainer {
+  background: #004429;
+  padding: 5px 5px 5px 30px;
+  border: 5px solid white;
+  border-radius: 15px;
+  letter-spacing: normal;
+  text-transform: none;
+  position: absolute;
+  display: none;
+  top: -410px;
+  transition: visibility 10s ease-in-out;
+  width: 305px;
+}
+
+.rulesHeading {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  padding: 10px;
+}
+
+.closeButton {
+  border: none;
+  border-radius: 100%;
+  position: absolute;
+  top: -13%;
+  left: 90%;
+}
+li {
+  padding: 1rem 2rem 0.5rem 0rem;
+  list-style: square;
+  font-weight: 300;
+}
+
+/*Hurry page*/
+.ifWinContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ifWinHeading1 {
+  font-size: 10rem;
+}
+
+.ifWinHeading2 {
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.ripple {
+  z-index: -1;
+  background-color: #fff;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 999px;
+  position: absolute;
+  animation: ripple 2s linear infinite;
+  transform: translate(-50%, -50%);
+}
+.rpl {
+  position: absolute;
+}
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0rem #2e9a2533, 0 0 0 2rem #2e9a2533, 0 0 0 4rem #2e9a2533,
+      0 0 0 6rem #2e9a2533;
+  }
+  100% {
+    box-shadow: 0 0 0 2rem #2e9a2533, 0 0 0 4rem #2e9a2533, 0 0 0 6rem #2e9a2533,
+      0 0 0 8rem #2e9a2500;
+  }
+}

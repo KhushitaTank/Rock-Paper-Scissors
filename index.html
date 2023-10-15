@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Paper-Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="headerSection">
+        <header class="header">
+          <div class="logo">
+            <h1 class="logoContain">rock</h1>
+            <h1 class="logoContain">paper</h1>
+            <h1 class="logoContain">scissors</h1>
+          </div>
+          <div class="score">
+            <div class="computerScore">
+              <h1 class="scoreTitle">computer score</h1>
+              <p class="scoreNumber pcScore">0</p>
+            </div>
+            <div class="yourScore">
+              <h1 class="scoreTitle">your score</h1>
+              <p class="scoreNumber userScore">0</p>
+            </div>
+          </div>
+        </header>
+      </section>
+
+      <section class="gameSection">
+        <div class="game">
+          <button class="choice-button rock" id="Rock">
+            <img src="./SVG/icon-rock.svg" alt="Rock" />
+          </button>
+          <button class="choice-button scissors" id="Scissors">
+            <img src="./SVG/icon-scissors.svg" alt="Scissors" />
+          </button>
+          <button class="choice-button paper" id="Paper">
+            <img src="./SVG/icon-paper.svg" alt="paper" />
+          </button>
+        </div>
+      </section>
+
+      <section class="resultSection">
+        <div class="Result">
+          <div class="yourChoice">
+            <h2 class="resultHeading">you picked</h2>
+            <div class="displayChoice">
+              <div class="userChoiceRock">
+                <div class="style rock">
+                  <img src="./SVG/icon-rock.svg" alt="Rock" />
+                  <div class="rpl user-effect" style="display: none">
+                    <div class="ripple" style="animation-delay: 0s"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="userChoicePaper">
+                <div class="style paper">
+                  <img src="./SVG/icon-paper.svg" alt="paper" />
+                  <div class="rpl user-effect" style="display: none">
+                    <div class="ripple" style="animation-delay: 0s"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="userChoiceScissors">
+                <div class="style scissors">
+                  <img src="./SVG/icon-scissors.svg" alt="scissors" />
+                  <div class="rpl user-effect" style="display: none">
+                    <div class="ripple" style="animation-delay: 0s"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="results-playAgainButton">
+            <h3 class="resultText">
+              <div class="resultsStatusWin">You win</div>
+              <div class="resultsStatusLost">you lose</div>
+              <div class="resultsStatusTie">tie</div>
+              <button class="playAgain">Play again</button>
+            </h3>
+          </div>
+          <div class="pcChoice">
+            <h2 class="resultHeading">pc picked</h2>
+            <div class="displayChoice">
+              <div class="computerChoiceRock">
+                <div class="style rock">
+                  <img src="./SVG/icon-rock.svg" alt="Rock" />
+                  <div class="rpl computer-effect" style="display: none">
+                    <div class="ripple" style="animation-delay: 0s"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="computerChoicePaper">
+                <div class="style paper">
+                  <img src="./SVG/icon-paper.svg" alt="paper" />
+                  <div class="rpl computer-effect" style="display: none">
+                    <div class="ripple" style="animation-delay: 0s"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="computerChoiceScissors">
+                <div class="style scissors">
+                  <img src="./SVG/icon-scissors.svg" alt="Scissors" />
+                  <div class="rpl computer-effect" style="display: none">
+                    <div class="ripple" style="animation-delay: 0s"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="ifWin">
+      <div class="ifWinContainer">
+        <img src="./SVG/icon-trophy.svg" alt="" />
+        <h1 class="ifWinHeading1">Hurry!!</h1>
+        <h2 class="ifWinHeading2">YOU WON THE GAME</h2>
+        <div class="playAgainButton">
+          <button class="playAgainHurryPage">Play again</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="buttonVisibleBottom">
+        <div class="rule">
+          <div class="rulesContainer">
+            <header class="rulesHeader">
+              <h1 class="rulesHeading">Game Rules</h1>
+              <button class="closeButton">
+                <img src="./SVG/icon-close.svg" alt="Close Button" />
+              </button>
+              <ul class="rulesOfGame">
+                <li>
+                  Rock beats scissors, scissors beat paper, and paper beats
+                  rock.
+                </li>
+                <li>
+                  Agree ahead of time whether you’ll count off “rock, paper,
+                  scissors, shoot” or just “rock, paper, scissors.”
+                </li>
+                <li>
+                  Use rock, paper, scissors to settle minor decisions or simply
+                  play to pass the time
+                </li>
+                <li>
+                  If both players lay down the same hand, each player lays down
+                  another hand
+                </li>
+              </ul>
+            </header>
+          </div>
+          <div class="ruleButton">
+            <button class="rules">rules</button>
+          </div>
+        </div>
+        <div class="nextbtn">
+          <button class="nextButton">next</button>
+        </div>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
