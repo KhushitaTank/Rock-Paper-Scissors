@@ -9,6 +9,10 @@ const rulesButton = document.querySelector(".rules");
 const closeButton = document.querySelector(".closeButton");
 const rulesDisplay = document.querySelector(".rulesContainer");
 const playAgainHurryPage = document.querySelector(".playAgainHurryPage");
+const againButton = document.querySelector(".Again");
+const againstText = document.querySelector(".Against");
+const emptyText = document.querySelector(".Empty");
+const replayButton = document.querySelector(".Reply");
 let userValue = localStorage.getItem("score-user") || 0;
 let computerValue = localStorage.getItem("score-computer") || 0;
 const userScoreElement = document.querySelector(".userScore");
@@ -31,8 +35,10 @@ function selected(choice) {
   const status = document.querySelector(".resultsStatus" + decideWinner);
   const userChoiceDisplay = document.querySelector(".userChoice" + choice);
   const pcChoiceDisplay = document.querySelector(".computerChoice" + pcAnswer);
-  resultSection.style.display = "block";
+
   selector.style.display = "none";
+
+  resultSection.style.display = "block";
   playAgainButton.style.display = "block";
   playAgainButton.addEventListener("click", () => playAgain());
   playAgainHurryPage.addEventListener("click", () => playAgain());
@@ -41,15 +47,28 @@ function selected(choice) {
   userChoiceDisplay.style.display = "block";
   status.style.display = "block";
   pcChoiceDisplay.style.display = "block";
-
   if (decideWinner === "Win") {
     userEffect.forEach((i) => (i.style.display = "block"));
     keepScore(1);
     winner();
+    againstText.style.display = "block";
+    emptyText.style.display = "none";
   } else if (decideWinner === "Lost") {
     computerEffect.forEach((i) => (i.style.display = "block"));
     keepScore(0);
+    emptyText.style.display = "none";
+    againstText.style.display = "block";
+  } else if (decideWinner === "Tie") {
+    tie();
   }
+}
+
+function tie() {
+  let displayNone = [againButton, againstText];
+  let displayValue = [emptyText, replayButton];
+  displayValue.forEach((i) => (i.style.display = "block"));
+  displayNone.forEach((i) => (i.style.display = "none"));
+  replayButton.addEventListener("click", () => playAgain());
 }
 
 function winner() {
@@ -75,6 +94,7 @@ function winner() {
       ".headerSection",
       ".user-effect",
       ".computer-effect",
+      ".emptyText",
     ];
     let findComponent = document.querySelectorAll(displayNoneValue);
     findComponent.forEach((i) => (i.style.display = "none"));
@@ -102,6 +122,7 @@ function playAgain() {
     ".user-effect",
     ".computer-effect",
     ".nextButton",
+    ".emptyText",
   ];
   let findComponent = document.querySelectorAll(displayNoneValue);
   findComponent.forEach((i) => (i.style.display = "none"));
@@ -125,6 +146,7 @@ function reset() {
     ".ifWin",
     ".user-effect",
     ".computer-effect",
+    ".emptyText",
   ];
 
   let map = document.querySelectorAll(resetedValue);
